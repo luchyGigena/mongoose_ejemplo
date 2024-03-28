@@ -20,9 +20,14 @@ app.use('/api/users', routerUsers);
 const conexion = async()=>{
     try{
         //en este caso la conexion es a mi bbdd Mongodb local
+         //  await mongoose.connect("mongodb://127.0.0.1:27017", {dbName: "usuarios"})
+
+
+
+         // conexion a bbdd en mongo atlas!
         await mongoose.connect("mongodb+srv://<user>:<password>@cluster0.u8zhm4a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" , {dbName: "usuarios"})
-      //  await mongoose.connect("mongodb://127.0.0.1:27017", {dbName: "usuarios"})
-        console.log("conectado a la bbdd local")
+     
+        console.log("conectado a la bbdd en mongo ATlas")
     }catch(error){
         console.log("fallo conexion")
     }
